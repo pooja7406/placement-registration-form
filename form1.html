@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Placement Registration Form</title>
+  <style>
+    h2 {text-align: center;}
+    body {text-align: left;}
+    form {
+      border: 2px solid #140101;
+      padding: 20px;
+      border-radius: 8px;
+      max-width: 500px;
+      margin: auto;
+      background-color: #b6b6b4;
+    }
+  </style>
+</head>
+<body>
+  <form action="display.html" method="GET" enctype="multipart/form-data" onsubmit="return validateForm()"> 
+    <h2>Placement Registration Form</h2>
+
+    <label>First Name: <input type="text" name="firstName" required></label><br><br>
+    <label>Last Name: <input type="text" name="lastName" required></label><br><br>
+
+    <label>Gender:
+      <input type="radio" name="gender" value="Male" required> Male
+      <input type="radio" name="gender" value="Female"> Female
+      <input type="radio" name="gender" value="Other"> Other
+    </label><br><br>
+
+    <label>Age: <input type="number" name="age" min="18" max="60" required></label><br><br>
+    <label>Qualifications: <input type="text" name="qualifications" required></label><br><br>
+    <label>Specializations: <input type="text" name="specializations" required></label><br><br>
+
+    <label>Technical Skills:<br>
+      <input type="checkbox" name="techSkills" value="JavaScript"> JavaScript
+      <input type="checkbox" name="techSkills" value="Python"> Python
+      <input type="checkbox" name="techSkills" value="Java"> Java
+      <input type="checkbox" name="techSkills" value="C++"> C++
+      <input type="checkbox" name="techSkills" value="HTML/CSS"> HTML/CSS
+    </label><br><br>
+
+    <label>Experience:
+      <select name="experience" required>
+        <option value="" disabled selected>Select</option>
+        <option value="Fresher">Fresher</option>
+        <option value="1-2 Years">1-2 Years</option>
+        <option value="3-5 Years">3-5 Years</option>
+        <option value="5+ Years">5+ Years</option>
+      </select>
+    </label><br><br>
+
+    <label>Post Applied For:<br>
+      <input type="checkbox" name="postApplied" value="Jr. Developer"> Jr. Developer
+      <input type="checkbox" name="postApplied" value="Tech Lead"> Tech Lead
+      <input type="checkbox" name="postApplied" value="Project Manager"> Project Manager
+    </label><br><br>
+
+    <label>Upload Resume: <input type="file" name="resume" accept=".pdf,.doc,.docx" required></label><br><br>
+
+    <label>
+      <input type="checkbox" name="declaration" required>
+      I declare that the information provided is true and correct.
+    </label><br><br>
+
+    <button type="submit">Submit</button>
+  </form>
+</body>
+</html>

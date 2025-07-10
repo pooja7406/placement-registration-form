@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Placement Registration Form</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      max-width: 600px;
+      margin: 20px auto;
+      padding: 10px;
+      background: #f9f9f9;
+      border-radius: 8px;
+    }
+    label {
+      display: block;
+      margin-top: 10px;
+      font-weight: bold;
+    }
+    input[type="text"],
+    input[type="number"],
+    select,
+    textarea {
+      width: 100%;
+      padding: 6px;
+      margin-top: 4px;
+      box-sizing: border-box;
+    }
+    .checkbox-group, .radio-group {
+      margin-top: 6px;
+    }
+    .checkbox-group label, .radio-group label {
+      font-weight: normal;
+      margin-right: 10px;
+    }
+    button {
+      margin-top: 15px;
+      padding: 10px 20px;
+      font-size: 1rem;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <h2>Placement Registration Form</h2>
+  <form id="placementForm" action="display.html" method="GET" enctype="multipart/form-data" onsubmit="return validateForm()">
+    <label for="firstName">First Name *</label>
+    <input type="text" id="firstName" name="firstName" required />
+
+    <label for="lastName">Last Name *</label>
+    <input type="text" id="lastName" name="lastName" required />
+
+    <label>Gender *</label>
+    <div class="radio-group">
+      <label><input type="radio" name="gender" value="Male" required /> Male</label>
+      <label><input type="radio" name="gender" value="Female" /> Female</label>
+      <label><input type="radio" name="gender" value="Other" /> Other</label>
+    </div>
+
+    <label for="age">Age *</label>
+    <input type="number" id="age" name="age" min="18" max="60" required />
+
+    <label for="qualifications">Qualifications *</label>
+    <input type="text" id="qualifications" name="qualifications" placeholder="e.g. B.Tech, MCA" required />
+
+    <label for="specializations">Specializations *</label>
+    <input type="text" id="specializations" name="specializations" placeholder="e.g. AI, Data Science" required />
+
+    <label>Technical Skills *</label>
+    <div class="checkbox-group">
+      <label><input type="checkbox" name="techSkills" value="JavaScript" /> JavaScript</label>
+      <label><input type="checkbox" name="techSkills" value="Python" /> Python</label>
+      <label><input type="checkbox" name="techSkills" value="Java" /> Java</label>
+      <label><input type="checkbox" name="techSkills" value="C++" /> C++</label>
+      <label><input type="checkbox" name="techSkills" value="HTML/CSS" /> HTML/CSS</label>
+    </div>
+
+    <label for="experience">Experience *</label>
+    <select id="experience" name="experience" required>
+      <option value="" disabled selected>Select Experience</option>
+      <option value="Fresher">Fresher</option>
+      <option value="1-2 Years">1-2 Years</option>
+      <option value="3-5 Years">3-5 Years</option>
+      <option value="5+ Years">5+ Years</option>
+    </select>
+
+    <label>Post Applied For *</label>
+    <div class="checkbox-group">
+      <label><input type="checkbox" name="postApplied" value="Jr. Developer" /> Jr. Developer</label>
+      <label><input type="checkbox" name="postApplied" value="Tech Lead" /> Tech Lead</label>
+      <label><input type="checkbox" name="postApplied" value="Project Manager" /> Project Manager</label>
+    </div>
+
+    <label for="resume">Upload Resume *</label>
+    <input type="file" id="resume" name="resume" accept=".pdf,.doc,.docx" required />
+
+    <label>
+      <input type="checkbox" id="declaration" name="declaration" required />
+      I hereby declare that the information provided is true and correct.
+    </label>
+
+    <button type="submit">Submit</button>
+  </form>
+
+
+</body>
+</html>
